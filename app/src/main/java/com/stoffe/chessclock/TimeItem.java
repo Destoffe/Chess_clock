@@ -1,17 +1,19 @@
 package com.stoffe.chessclock;
 
 public class TimeItem {
+    private int time;
+    private String increment;
 
-    public TimeItem(String time, String increment){
+    public TimeItem(int time, String increment){
         this.time = time;
         this.increment = increment;
     }
 
-    public String getTime() {
+    public int getTime() {
         return time;
     }
 
-    public void setTime(String time) {
+    public void setTime(int time) {
         this.time = time;
     }
 
@@ -23,6 +25,5 @@ public class TimeItem {
         this.increment = increment;
     }
 
-    private String time;
-    private String increment;
+
 }
