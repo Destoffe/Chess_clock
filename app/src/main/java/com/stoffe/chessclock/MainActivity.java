@@ -14,8 +14,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ClockDatabase db = Room.databaseBuilder(getApplicationContext(),
-                ClockDatabase.class, "database-name").build();
-
     }
 }

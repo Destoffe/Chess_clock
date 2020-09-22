@@ -3,20 +3,22 @@ package com.stoffe.chessclock.db;
 
 import java.util.List;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 @Dao
 public interface TimeDao {
 
-    @Query("SELECT * FROM time")
-    List<Time> getAllTimeformats();
+    @Query("SELECT * FROM timeentity")
+    LiveData<List<TimeEntity>> getAllTimeformats();
 
-    @Insert
-    void insertAll(Time... times);
+    @Insert (onConflict = OnConflictStrategy.IGNORE)
+    void insertAll(TimeEntity times);
 
     @Delete
-    void delete(Time time);
+    void delete(TimeEntity time);
 }
