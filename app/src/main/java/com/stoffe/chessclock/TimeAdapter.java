@@ -44,7 +44,7 @@ public class TimeAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) v.getTag();
         }
-        holder.uName.setText(listData.get(position).getTime());
+        holder.uName.setText(Integer.toString(listData.get(position).getTime()));
         holder.uDesignation.setText(listData.get(position).getIncrement());
         return v;
     }

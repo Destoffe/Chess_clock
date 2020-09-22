@@ -18,9 +18,6 @@ public abstract class ClockDatabase extends RoomDatabase {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             ClockDatabase.class, "database-name")
-                            // Wipes and rebuilds instead of migrating
-                            // if no Migration object.
-                            // Migration is not part of this practical.
                             .fallbackToDestructiveMigration()
                             .build();
                 }
