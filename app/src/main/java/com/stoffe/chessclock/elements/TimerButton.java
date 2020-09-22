@@ -16,17 +16,19 @@ public class TimerButton {
     private final Button button;
     private final long defaultTimeInMillis;
     private final Context context;
+    private final long incrementOnClick;
 
     private ButtonCountdown countDownTimer;
     private long remainingMSOnClock;
     private ButtonPressedEvent buttonPressedEvent;
 
-    public TimerButton(View view, int id, long startMSOnClock, Context context) {
+    public TimerButton(View view, int id, long startMSOnClock, long incrementOnClick, Context context) {
         this.context = context;
         button = view.findViewById(id);
         button.setOnClickListener(new ButtonClick());
         this.remainingMSOnClock = startMSOnClock;
         this.defaultTimeInMillis = startMSOnClock;
+        this.incrementOnClick = incrementOnClick;
         countDownTimer = createButtonCountdown();
         updateButtonText();
     }
@@ -83,6 +85,7 @@ public class TimerButton {
         @Override
         public void onClick(View view) {
             pause();
+            incrementTime(incrementOnClick);
             if (buttonPressedEvent != null) {
                 buttonPressedEvent.onClick();
             }
