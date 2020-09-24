@@ -1,13 +1,9 @@
-package com.stoffe.chessclock;
+package com.stoffe.chessclock.db;
 
 import android.app.Application;
-import android.app.TimePickerDialog;
-
-import com.stoffe.chessclock.db.TimeEntity;
 
 import java.util.List;
 
-import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
@@ -20,7 +16,7 @@ public class TimeViewmodel extends AndroidViewModel {
         allTimes = repository.getAllWords();
     }
 
-    LiveData<List<TimeEntity>> getAllTimes(){
+    public LiveData<List<TimeEntity>> getAllTimes(){
         return allTimes;
     }
     public void insert(TimeEntity time)

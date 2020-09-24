@@ -1,11 +1,8 @@
 package com.stoffe.chessclock;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
-
 import android.os.Bundle;
 
-import com.stoffe.chessclock.db.ClockDatabase;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 

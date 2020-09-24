@@ -1,4 +1,4 @@
-package com.stoffe.chessclock;
+package com.stoffe.chessclock.db;
 
 import android.app.Application;
 import android.os.AsyncTask;

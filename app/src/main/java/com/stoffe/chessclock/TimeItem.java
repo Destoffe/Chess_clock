@@ -4,7 +4,7 @@ public class TimeItem {
     private int time;
     private String increment;
 
-    public TimeItem(int time, String increment){
+    public TimeItem(int time, String increment) {
         this.time = time;
         this.increment = increment;
     }

@@ -10,6 +10,7 @@ import androidx.room.RoomDatabase;
 public abstract class ClockDatabase extends RoomDatabase {
 
     private static ClockDatabase INSTANCE;
+
     public abstract TimeDao timeDao();
 
     public static ClockDatabase getDatabase(final Context context) {
