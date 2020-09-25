@@ -2,9 +2,9 @@ package com.stoffe.chessclock;
 
 public class TimeItem {
     private int time;
-    private String increment;
+    private int increment;
 
-    public TimeItem(int time, String increment) {
+    public TimeItem(int time, int increment) {
         this.time = time;
         this.increment = increment;
     }
@@ -17,13 +17,12 @@ public class TimeItem {
         this.time = time;
     }
 
-    public String getIncrement() {
+    public int getIncrement() {
         return increment;
     }
 
-    public void setIncrement(String increment) {
+    public void setIncrement(int increment) {
         this.increment = increment;
     }
-
 
 }

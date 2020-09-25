@@ -10,17 +10,22 @@ import androidx.lifecycle.LiveData;
 public class TimeViewmodel extends AndroidViewModel {
     private LiveData<List<TimeEntity>> allTimes;
     private TimeRepository repository;
+
     public TimeViewmodel(Application application) {
         super(application);
         repository = new TimeRepository(application);
         allTimes = repository.getAllWords();
     }
 
-    public LiveData<List<TimeEntity>> getAllTimes(){
+    public LiveData<List<TimeEntity>> getAllTimes() {
         return allTimes;
     }
-    public void insert(TimeEntity time)
-    {
+
+    public void insert(TimeEntity time) {
         repository.insert(time);
+    }
+
+    public void deleteTime(TimeEntity time) {
+        repository.delete(time);
     }
 }
