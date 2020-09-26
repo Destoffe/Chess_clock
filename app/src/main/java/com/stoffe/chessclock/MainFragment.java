@@ -3,18 +3,14 @@ package com.stoffe.chessclock;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.stoffe.chessclock.databinding.MainFragmentBinding;
-
 import com.stoffe.chessclock.elements.TimerButton;
-import com.stoffe.chessclock.elements.TimerButton.ButtonPressedEvent;
-import java.util.Comparator;
+
 import java.util.concurrent.TimeUnit;
 
 import androidx.annotation.NonNull;
@@ -76,8 +72,8 @@ public class MainFragment extends Fragment {
         incrementButton1.setOnClickListener(v -> player2.incrementTime(1000));
 
         pauseButton.setOnClickListener(v -> {
-                player1.pause();
-                player2.pause();
+            player1.pause();
+            player2.pause();
         });
     }
 }

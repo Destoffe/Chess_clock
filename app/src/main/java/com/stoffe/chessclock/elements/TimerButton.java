@@ -4,10 +4,11 @@ import android.content.Context;
 import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
-import androidx.core.content.ContextCompat;
+
 import com.stoffe.chessclock.Constants;
 import com.stoffe.chessclock.R;
-import java.util.concurrent.Semaphore;
+
+import androidx.core.content.ContextCompat;
 
 public class TimerButton {
 
@@ -57,7 +58,7 @@ public class TimerButton {
         updateButtonText();
     }
 
-    public void pause()  {
+    public void pause() {
         countDownTimer.pause();
         button.setBackgroundColor(ContextCompat.getColor(context, R.color.grey));
     }
@@ -95,7 +96,7 @@ public class TimerButton {
     private String createButtonText(long millisUntilFinished) {
         long seconds = (millisUntilFinished / 1000) % 60;
         long minutes = (millisUntilFinished / (1000 * 60)) % 60;
-        return String.format(Constants.defaultLocale,"%d:%02d", minutes, seconds);
+        return String.format(Constants.defaultLocale, "%d:%02d", minutes, seconds);
     }
 
     private class ButtonCountdown extends CountDownTimer {

@@ -14,10 +14,11 @@ public class TimeAdapter extends BaseAdapter {
     private ArrayList<TimeItem> listData;
     private LayoutInflater layoutInflater;
 
-    public TimeAdapter(Context aContext, ArrayList<TimeItem> listData) {
+    public TimeAdapter(Context aContext, ArrayList<TimeItem> listData, boolean showEditButton) {
         this.listData = listData;
         layoutInflater = LayoutInflater.from(aContext);
     }
+
     @Override
     public int getCount() {
         return listData.size();
@@ -33,21 +34,27 @@ public class TimeAdapter extends BaseAdapter {
         return position;
     }
 
+    public void deleteItem(int position) {
+        listData.remove(position);
+    }
+
     public View getView(int position, View v, ViewGroup vg) {
         ViewHolder holder;
         if (v == null) {
             v = layoutInflater.inflate(R.layout.row_item, null);
             holder = new ViewHolder();
-            holder.uName = (TextView) v.findViewById(R.id.time);
-            holder.uDesignation = (TextView) v.findViewById(R.id.increment);
+            holder.uName = v.findViewById(R.id.time);
+            holder.uDesignation = v.findViewById(R.id.increment);
             v.setTag(holder);
         } else {
             holder = (ViewHolder) v.getTag();
         }
         holder.uName.setText(Integer.toString(listData.get(position).getTime()));
-        holder.uDesignation.setText(listData.get(position).getIncrement());
+        holder.uDesignation.setText(Integer.toString(listData.get(position).getIncrement()));
+
         return v;
     }
+
     static class ViewHolder {
         TextView uName;
         TextView uDesignation;
