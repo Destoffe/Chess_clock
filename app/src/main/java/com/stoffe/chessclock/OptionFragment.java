@@ -118,15 +118,12 @@ public class OptionFragment extends Fragment {
 
         FloatingActionButton fab = view.findViewById(R.id.fab);
         fab.setOnClickListener(view1 -> {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext(),R.style.dialog_style);
             builder.setTitle("Select start time and increment");
 
             AddTimeLayout LL = new AddTimeLayout(getContext());
 
-            final EditText input = new EditText(getContext());
-            input.setInputType(InputType.TYPE_NUMBER_VARIATION_NORMAL);
             builder.setView(LL);
-
             builder.setPositiveButton("OK", (dialog, which) -> {
                 int startTime = LL.getStartTimePickerValue();
                 int increment = LL.getIncrementPickerValue();

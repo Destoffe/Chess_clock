@@ -5,9 +5,14 @@ import android.view.Gravity;
 import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 
+import com.stoffe.chessclock.R;
+
+import androidx.core.content.ContextCompat;
+
 public class AddTimeLayout extends LinearLayout {
     final NumberPicker startTimePicker;
     final NumberPicker incrementPicker;
+
     public AddTimeLayout(Context context) {
         super(context);
 
@@ -20,6 +25,10 @@ public class AddTimeLayout extends LinearLayout {
         incrementPicker = new NumberPicker(getContext());
         incrementPicker.setMaxValue(100);
         incrementPicker.setMinValue(0);
+
+        this.setBackgroundColor(ContextCompat.getColor(context, R.color.dark_grey));
+        startTimePicker.setBackgroundColor(ContextCompat.getColor(context, R.color.dark_grey));
+        incrementPicker.setBackgroundColor(ContextCompat.getColor(context, R.color.dark_grey));
 
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(50, 50);
         params.gravity = Gravity.CENTER;
@@ -35,11 +44,11 @@ public class AddTimeLayout extends LinearLayout {
         this.addView(incrementPicker, incPickerParams);
     }
 
-    public int getStartTimePickerValue(){
+    public int getStartTimePickerValue() {
         return startTimePicker.getValue();
     }
 
-    public int getIncrementPickerValue(){
+    public int getIncrementPickerValue() {
         return incrementPicker.getValue();
     }
 }
