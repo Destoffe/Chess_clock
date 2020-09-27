@@ -10,7 +10,7 @@ import com.stoffe.chessclock.R;
 
 import androidx.core.content.ContextCompat;
 
-public class TimerButton {
+public class Player {
 
     private final static int COUNTDOWN_INTERVAL = 1000;
 
@@ -23,7 +23,7 @@ public class TimerButton {
     private long remainingMSOnClock;
     private ButtonPressedEvent buttonPressedEvent;
 
-    public TimerButton(View view, int id, long startMSOnClock, long incrementOnClick, Context context) {
+    public Player(View view, int id, long startMSOnClock, long incrementOnClick, Context context) {
         this.context = context;
         button = view.findViewById(id);
         button.setOnClickListener(new ButtonClick());

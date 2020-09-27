@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import com.stoffe.chessclock.databinding.MainFragmentBinding;
-import com.stoffe.chessclock.elements.TimerButton;
 
+import com.stoffe.chessclock.elements.Player;
 import java.util.concurrent.TimeUnit;
 
 import androidx.annotation.NonNull;
@@ -42,8 +42,8 @@ public class MainFragment extends Fragment {
         long startTimeInMs = TimeUnit.MINUTES.toMillis(Integer.parseInt(preferences.getString("Time", "1")));
         long incrementOnClick = TimeUnit.SECONDS.toMillis(Integer.parseInt(preferences.getString("Increment", "1")));
 
-        final TimerButton player1 = new TimerButton(view, R.id.player1, startTimeInMs, incrementOnClick, getContext());
-        final TimerButton player2 = new TimerButton(view, R.id.player2, startTimeInMs, incrementOnClick, getContext());
+        final Player player1 = new Player(view, R.id.player1, startTimeInMs, incrementOnClick, getContext());
+        final Player player2 = new Player(view, R.id.player2, startTimeInMs, incrementOnClick, getContext());
         player1.setButtonPressedEvent(player2::start);
         player2.setButtonPressedEvent(player1::start);
 
