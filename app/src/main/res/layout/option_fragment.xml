@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -15,7 +16,8 @@
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/dark_grey">
 
 
         <LinearLayout
@@ -30,7 +32,8 @@
                     android:elevation="15dp"
                     android:gravity="center_horizontal"
                     android:text="Choose time format"
-                    android:textSize="35sp" />
+                    android:textSize="35sp"
+                    android:textColor="@color/white"/>
 
             <ListView
                 android:id="@+id/listView"
@@ -48,7 +51,8 @@
                 android:layout_marginBottom="10dp"
                 android:background="@color/orange"
                 android:text="DONE"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:textColor="@color/white"/>
 
         </LinearLayout>
 
@@ -58,10 +62,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end|center"
             android:layout_margin="16dp"
-            android:background="#000000"
+            android:background="@color/orange"
             android:contentDescription="123"
             android:paddingBottom="20dp"
-            android:src="@drawable/ic_baseline_add_24" />
+            android:src="@drawable/ic_baseline_add_24"
+            android:backgroundTint="@color/orange"
+            app:borderWidth="0dp"/>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

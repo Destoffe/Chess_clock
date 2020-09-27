@@ -1,11 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Alert Dialog -->
+    <style name="dialog_style" parent="@style/ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <!-- Background Color-->
+        <item name="android:background">@color/dark_grey</item>
+        <!-- Text Color for title and message -->
+        <item name="colorOnSurface">@color/white</item>
+        <item name="android:textSize">60sp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <!-- Style for positive button -->
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <!-- Style for negative button -->
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="PositiveButtonStyle" parent="@style/Widget.MaterialComponents.Button">
+        <!-- text color for the button -->
+        <item name="android:textColor">@color/white</item>
+        <!-- Background tint for the button -->
+        <item name="backgroundTint">@color/orange</item>
+        <item name="backgroundColor">@color/orange</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="@style/Widget.MaterialComponents.Button">
+        <!-- text color for the button -->
+        <item name="android:textColor">@color/white</item>
+        <!-- Background tint for the button -->
+        <item name="backgroundTint">@color/orange</item>
+        <item name="backgroundColor">@color/orange</item>
+        <item name="android:textSize">18sp</item>
+
+    </style>
 </resources>

@@ -39,7 +39,8 @@ public class Player {
     }
 
     public void start() {
-        button.setBackgroundColor(ContextCompat.getColor(context, R.color.orange));
+        button.setBackground(ContextCompat.getDrawable(context,R.drawable.player_button_focused_style));
+        button.setTextColor(ContextCompat.getColor(context,R.color.white));
         countDownTimer = createButtonCountdown();
         countDownTimer.begin();
     }
@@ -52,7 +53,8 @@ public class Player {
     }
 
     public void reset() {
-        button.setBackgroundColor(ContextCompat.getColor(context, R.color.grey));
+        button.setBackground(ContextCompat.getDrawable(context,R.drawable.player_button_style));
+        button.setTextColor(ContextCompat.getColor(context,R.color.black));
         countDownTimer.pause();
         remainingMSOnClock = defaultTimeInMillis;
         updateButtonText();
@@ -60,7 +62,8 @@ public class Player {
 
     public void pause() {
         countDownTimer.pause();
-        button.setBackgroundColor(ContextCompat.getColor(context, R.color.grey));
+        button.setBackground(ContextCompat.getDrawable(context,R.drawable.player_button_style));
+        button.setTextColor(ContextCompat.getColor(context,R.color.black));
     }
 
     public void incrementTime(long increment) {
