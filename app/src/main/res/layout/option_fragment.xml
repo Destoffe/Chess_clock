@@ -1,52 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <LinearLayout
+    <data>
+
+        <variable
+            name="onEditClickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="editMode"
+            type="boolean" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <TextView
+
+        <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:elevation="15dp"
+                    android:gravity="center_horizontal"
+                    android:text="Choose time format"
+                    android:textSize="35sp" />
+
+            <ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/doneButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/orange"
+                android:text="DONE"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:elevation="15dp"
-            android:gravity="center_horizontal"
-            android:text="Choose time format"
-            android:textSize="35sp" />
+            android:layout_gravity="end|center"
+            android:layout_margin="16dp"
+            android:background="#000000"
+            android:contentDescription="123"
+            android:paddingBottom="20dp"
+            android:src="@drawable/ic_baseline_add_24" />
 
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-        <ListView
-            android:id="@+id/listView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"/>
-
-        <Button
-            android:id="@+id/doneButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/orange"
-            android:text="DONE"
-            android:textSize="24sp" />
-
-    </LinearLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|center"
-        android:layout_margin="16dp"
-        android:background="#000000"
-        android:contentDescription="123"
-        android:paddingBottom="20dp"
-        android:src="@drawable/ic_baseline_add_24" />
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

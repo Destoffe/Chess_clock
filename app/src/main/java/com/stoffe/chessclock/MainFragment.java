@@ -72,8 +72,8 @@ public class MainFragment extends Fragment {
         incrementButton1.setOnClickListener(v -> player2.incrementTime(1000));
 
         pauseButton.setOnClickListener(v -> {
-                player1.pause();
-                player2.pause();
+            player1.pause();
+            player2.pause();
         });
     }
 }

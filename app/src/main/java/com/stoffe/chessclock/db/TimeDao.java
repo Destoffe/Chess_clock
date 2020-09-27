@@ -16,7 +16,7 @@ public interface TimeDao {
     @Query("SELECT * FROM timeentity")
     LiveData<List<TimeEntity>> getAllTimeformats();
 
-    @Insert (onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insertAll(TimeEntity times);
 
     @Delete

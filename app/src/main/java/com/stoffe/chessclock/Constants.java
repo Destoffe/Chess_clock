@@ -1,6 +1,7 @@
 package com.stoffe.chessclock;
 
 import android.content.res.Resources;
+
 import java.util.Locale;
 
 public class Constants {
